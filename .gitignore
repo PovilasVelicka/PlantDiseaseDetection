@@ -1,0 +1,9 @@
+# Игнорируем сырые данные и временные файлы
+training/dataset/
+*.pth
+__pycache__/
+.ipynb_checkpoints/
+
+# Игнорируем артефакты API, кроме модели
+!plant_api/plant_disease_model.onnx
+!plant_api/class_names.json
