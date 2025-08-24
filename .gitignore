@@ -1,9 +1,79 @@
-# Игнорируем сырые данные и временные файлы
-training/dataset/
-*.pth
+# ======================================
+# Python general
+# ======================================
 __pycache__/
-.ipynb_checkpoints/
+*.py[cod]
+*.so
+*.pyd
+*.dll
+*.dylib
+*.egg
+*.egg-info/
+.eggs/
+dist/
+build/
+pip-wheel-metadata/
+*.manifest
+*.spec
 
-# Игнорируем артефакты API, кроме модели
+# Virtual environments
+.venv/
+env/
+venv/
+ENV/
+.conda/
+.mypy_cache/
+.pytest_cache/
+.cache/
+
+# ======================================
+# Jupyter / Colab
+# ======================================
+.ipynb_checkpoints/
+*.ipynb
+
+# ======================================
+# Training artifacts
+# ======================================
+training/dataset/          # raw dataset
+*.pth                      # PyTorch checkpoints
+*.pt                       # model weights
+*.onnx                     # exported models (except API copy)
+*.log                      # training logs
+checkpoints/               # trainer checkpoints
+
+# ======================================
+# API artifacts
+# ======================================
+# Ignore all API exports by default
+plant_api/*
+
+# Keep only the exported ONNX model and class names
 !plant_api/plant_disease_model.onnx
 !plant_api/class_names.json
+
+# ======================================
+# Logs & configs
+# ======================================
+logs/
+*.log
+*.yaml~
+*.yml~
+*.json~
+
+# ======================================
+# OS-specific
+# ======================================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ======================================
+# Editors / IDE
+# ======================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+*.tmp
