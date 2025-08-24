@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Augalų ligų detektorius — Kamera ir įkėlimas</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <h1>Augalų ligų detektorius — kamera / failas</h1>
+    <p class="sub">Nufotografuokite lapą (256×256) arba pasirinkite paveikslėlį — ir išsiųskite į API.</p>
+
+    <div class="grid">
+      <!-- Kairė: kamera / įkėlimas -->
+      <section class="panel">
+        <div class="controls">
+          <button id="btnStartCam">📷 Įjungti kamerą</button>
+          <button id="btnShot" disabled>📸 Nuotrauka (256×256)</button>
+          <label class="file">
+            <input id="fileInput" type="file" accept="image/*" capture="environment">
+            🖼️ Pasirinkti failą
+          </label>
+          <button id="btnClear" disabled>♻️ Išvalyti</button>
+        </div>
+        <div class="hint small">Patarimas: mobiliajame <code>capture="environment"</code> įjungia galinę kamerą. Kompiuteryje naudokite „Įjungti kamerą“.</div>
+
+        <div class="media" id="mediaBox">
+          <video id="video" playsinline muted></video>
+          <canvas id="canvas" width="256" height="256"></canvas>
+          <img id="thumb" alt="" />
+        </div>
+
+        <div class="controls" style="margin-top:12px;">
+          <button id="btnSend" class="primary" disabled>🚀 Siųsti į API</button>
+          <div id="loader" class="spinner"><span class="dot"></span><span class="dot"></span><span class="dot"></span> <span>Siunčiama...</span></div>
+        </div>
+
+        <div class="tip">Kliente vaizdas apkarpomas centre ir sumažinamas iki 256×256, tada konvertuojamas į JPEG ir siunčiamas į API.</div>
+      </section>
+
+      <!-- Dešinė: rezultatai -->
+      <section class="panel results">
+        <div class="row">
+          <div class="badge">API atsakymas</div>
+          <div id="status" class="small"></div>
+        </div>
+        <div id="human" class="human"></div>
+        <table id="table">
+          <thead><tr><th>Klasė</th><th>Patikimumas</th></tr></thead>
+          <tbody id="tbody"></tbody>
+        </table>
+        <pre id="raw" class="small"></pre>
+      </section>
+    </div>
+  </div>
+
+  <script defer src="js/app.js"></script>
+</body>
+</html>

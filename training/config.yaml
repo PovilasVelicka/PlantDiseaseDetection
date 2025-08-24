@@ -1,0 +1,14 @@
+# Dataset & paths
+kaggle_dataset: emmarex/plantdisease
+log_dir: logs
+
+# Training
+batch_size: 32
+num_epochs: 5
+lr: 0.001
+weight_decay: 0.0001
+label_smoothing: 0.05
+use_weighted_sampler: true
+
+# Performance
+amp: true  # Mixed precision (CUDA recommended)
