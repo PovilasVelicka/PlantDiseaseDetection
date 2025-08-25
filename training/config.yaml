@@ -11,4 +11,4 @@ label_smoothing: 0.05
 use_weighted_sampler: true
 
 # Performance
-amp: true  # Mixed precision (CUDA recommended)
+amp: false  # Mixed precision (CUDA recommended)
