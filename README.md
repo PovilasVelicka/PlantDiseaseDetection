@@ -12,12 +12,15 @@ This project allows you to **run a ready-to-use plant disease classifier** via a
 
 ---
 
-## 🧩 2. Install dependencies
+## 🧩 2. Create venv and install dependencies
 
 In terminal or PowerShell, go to the project folder and run:
 
 ```bash
-pip install -r requirements.txt
+python -m venv .venv
+# Windows: .venv\Scripts\activate
+# Linux/Mac: source .venv/bin/activate
+pip install -r requirements-training.txt
 ```
 
 ---
