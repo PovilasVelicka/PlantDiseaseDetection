@@ -1,7 +1,7 @@
 /* ============================================
  * LT: Nustatyk savo FastAPI endpoint žemiau
  * ============================================ */
-const API_URL = "http://127.0.0.1:8000/predict"; // pvz., https://plant-api.azurewebsites.net/predict
+const API_URL = "http://localhost:8000/predict"; // pvz., https://plant-api.azurewebsites.net/predict
 
 /* ==== DOM ==== */
 const video   = document.getElementById('video');

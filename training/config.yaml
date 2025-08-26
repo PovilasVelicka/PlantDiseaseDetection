@@ -4,11 +4,11 @@ log_dir: logs
 
 # Training
 batch_size: 32
-num_epochs: 5
-lr: 0.001
+num_epochs: 1
+lr: 1e-5
 weight_decay: 0.0001
 label_smoothing: 0.05
 use_weighted_sampler: true
 
 # Performance
-amp: false  # Mixed precision (CUDA recommended)
+amp: true  # Mixed precision (CUDA recommended)
